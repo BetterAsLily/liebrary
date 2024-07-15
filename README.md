@@ -46,5 +46,5 @@ cd ext/godot/
 scons platform=windows
 ```
 
-I was here
+I was here the whole time
 
