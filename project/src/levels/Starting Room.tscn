@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4eob751w3ut2"]
+
+[ext_resource type="Script" path="res://src/characters/beast.gd" id="1_nyclo"]
+[ext_resource type="Texture2D" uid="uid://b7vk4e7r4e243" path="res://assets/icon.svg" id="2_euos8"]
+
+[node name="StartingRoom" type="Node2D"]
+
+[node name="Beast" type="CharacterBody2D" parent="."]
+position = Vector2(140, 35)
+script = ExtResource("1_nyclo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Beast"]
+position = Vector2(0, 0.250006)
+scale = Vector2(0.203125, 0.183594)
+texture = ExtResource("2_euos8")

@@ -1,7 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1721347631
-::res://assets/::1721347631
-icon.svg::CompressedTexture2D::4676474831234786546::1721347496::1721347631::1::::<><>::
-::res://src/::1721347620
-::res://src/characters/::1721347540
-::res://src/levels/::1721347620
+::res://::1721354973
+::res://assets/::1721354693
+icon.svg::CompressedTexture2D::4676474831234786546::1721354643::1721354693::1::::<><>::
+::res://src/::1721354973
+::res://src/characters/::1721354806
+character_abc.gd::GDScript::-1::1721354643::0::1::::CharacterABC<>CharacterBody2D<>::
+character_abc.tscn::PackedScene::8602742174234084898::1721354806::0::1::::<><>::res://src/characters/character_abc.gd<>uid://b7vk4e7r4e243::::res://assets/icon.svg
+::res://src/levels/::1721354980
+beast.gd::GDScript::-1::1721355147::0::1::::<>CharacterBody2D<>::
+scene.tscn::PackedScene::9152897707986092055::1721354980::0::1::::<><>::
+Starting Room.tscn::PackedScene::6817428895901197553::1721355118::0::1::::<><>::
