@@ -7,6 +7,30 @@ GameJam
 git clone https://github.com/BetterAsLily/liebrary.git
 ```
 
+## Contributing
+
+Making an issue:
+  - From the GitHub repo, click "issues" the "new issue"
+  - Add issue title and description
+  - From the right-side ribbon, select "create branch for issue" (keep the default name)
+
+From your local copy of the repo, open git bash. Run the following:
+```bash
+git checkout main
+git pull
+```
+You should see your newly created branch pulled down. Run:
+```bash
+git checkout X-my-branch-name
+```
+Now write code, add files, whatever the issue is. When done (with the issue, or just for the time being):
+```bash
+git status
+git add .
+git commit -m "#X helpful commit comment"
+git push
+```
+
 ## Building godot
 
 ### First build only
