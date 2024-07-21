@@ -1,7 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1721347631
-::res://assets/::1721347631
-icon.svg::CompressedTexture2D::4676474831234786546::1721347496::1721347631::1::::<><>::
-::res://src/::1721347620
-::res://src/characters/::1721347540
-::res://src/levels/::1721347620
+::res://::1721517958
+::res://assets/::1721518145
+grassland_path_tileset.png::CompressedTexture2D::1851602029214863807::1721505555::1721505557::1::::<><>::
+Grassland_Tileset.png::CompressedTexture2D::4891757800505950435::1721504097::1721504100::1::::<><>::
+Grassland_Tileset_V5.png::CompressedTexture2D::5916926190023808706::1721507598::1721507635::1::::<><>::
+Grassland_Tileset_V6.png::CompressedTexture2D::3358339979853710968::1721518145::1721518147::1::::<><>::
+icon.svg::CompressedTexture2D::4676474831234786546::1721354643::1721354693::1::::<><>::
+witch_idle_sprite_still.png::CompressedTexture2D::6072853058941884919::1721357088::1721357094::1::::<><>::
+witch_walking_down.png::CompressedTexture2D::599907239049221628::1721483797::1721483806::1::::<><>::
+::res://src/::1721476000
+::res://src/characters/::1721506463
+beast.gd::GDScript::-1::1721484866::0::1::::<>CharacterABC<>::
+beast.tscn::PackedScene::6430152052170897268::1721506463::0::1::::<><>::res://src/characters/beast.gd<>uid://isunctrtaoum::::res://assets/witch_walking_down.png
+character_abc.gd::GDScript::-1::1721354643::0::1::::CharacterABC<>CharacterBody2D<>::
+character_abc.tscn::PackedScene::8602742174234084898::1721475891::0::1::::<><>::res://src/characters/character_abc.gd<>uid://b7vk4e7r4e243::::res://assets/icon.svg
+witch_walking_down_sheet.png::CompressedTexture2D::8183026413642487942::1721482522::1721482522::1::::<><>::
+::res://src/levels/::1721508412
+scene.tscn::PackedScene::9152897707986092055::1721485117::0::1::::<><>::
+Starting Room.tscn::PackedScene::6817428895901197553::1721508412::0::1::::<><>::uid://cbxush66x3bhb::::res://assets/Grassland_Tileset.png<>uid://cxu2wus7xaa1q::::res://src/characters/beast.tscn<>uid://cqkg562085gri::::res://assets/Grassland_Tileset_V5.png

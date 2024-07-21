@@ -1,2 +1,2 @@
-res://character_abc.gd
-res://src/levels/scene.tscn
+res://src/levels/Starting Room.tscn
+res://src/characters/beast.tscn
