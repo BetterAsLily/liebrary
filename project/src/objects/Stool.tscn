@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs2ivepcrdtcw"]
+
+[ext_resource type="Script" path="res://src/objects/stool.gd" id="1_gegpw"]
+[ext_resource type="Texture2D" uid="uid://8u7wib2i3xaa" path="res://assets/Tut_Stool.png" id="1_p0fv2"]
+[ext_resource type="Script" path="res://src/interaction/interaction_area.gd" id="3_3vedc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkoys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mp5da"]
+radius = 40.0
+
+[node name="Stool" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gegpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -8)
+texture = ExtResource("1_p0fv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_lkoys")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_3vedc")
+action_name = "read"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_mp5da")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

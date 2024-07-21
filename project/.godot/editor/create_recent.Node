@@ -1,9 +1,13 @@
-TileMap
+CollisionShape2D
+InteractionArea
 Sprite2D
+StaticBody2D
+Label
+Area2D
+Node2D
+TileMap
 AnimationPlayer
 CollisionPolygon2D
-StaticBody2D
-CollisionShape2D
 CharacterBody2D
 CharacterABC
 TileMapLayer

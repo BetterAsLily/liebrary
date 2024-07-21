@@ -1,2 +1,12 @@
+res://src/interaction/interaction_area.gd
+res://src/objects/Stool.tscn
+res://src/interaction/interaction_manager.gd
+res://src/characters/Player.tscn
 res://src/levels/Starting Room.tscn
-res://src/characters/beast.tscn
+res://src/interaction/interaction_area.tscn
+res://src/interaction/InteractionManager.tscn
+res://src/objects/stool.gd
+res://src/characters/beast.gd
+res://src/characters/Beast.tscn
+res://src/objects/stool2.tscn
+res://src/objects/stool_2.gd
