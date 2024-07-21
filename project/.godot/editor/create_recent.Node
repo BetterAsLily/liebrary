@@ -1,3 +1,4 @@
+TileMapLayer
 CollisionShape2D
 InteractionArea
 Sprite2D
@@ -10,5 +11,4 @@ AnimationPlayer
 CollisionPolygon2D
 CharacterBody2D
 CharacterABC
-TileMapLayer
 AnimatedSprite2D
