@@ -37,9 +37,7 @@ void fragment()
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_syj2t"]
 shader = SubResource("Shader_p6ea0")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r7t1k"]
-radius = 16.0
-height = 48.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgds"]
 
 [sub_resource type="Animation" id="Animation_23unx"]
 length = 0.001
@@ -80,21 +78,25 @@ _data = {
 "Run_Down": SubResource("Animation_h8d14")
 }
 
-[node name="Beast" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 material = SubResource("ShaderMaterial_syj2t")
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_2331s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, 3.8147e-06)
+y_sort_enabled = true
+position = Vector2(0, -16)
 scale = Vector2(1.003, 0.989)
 texture = ExtResource("2_dxgxe")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.384094, -0.039856)
+y_sort_enabled = true
+position = Vector2(0.0960045, -0.352003)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_r7t1k")
+shape = SubResource("RectangleShape2D_ulgds")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
