@@ -1,8 +1,9 @@
 extends CharacterABC
 
-const MAX_SPEED = 500.00
-const FRICTION = 200.00
+const MAX_SPEED = 200.00
+const FRICTION = 500.00
 
+@onready var animations = $AnimationPlayer
 
 func _physics_process(delta):
 
@@ -14,7 +15,10 @@ func _physics_process(delta):
 
 	if input_vector != Vector2.ZERO:
 		velocity = input_vector * MAX_SPEED
+		animations.play("Run_Down")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
+		animations.pause()
 
 	move_and_slide()
+	 
