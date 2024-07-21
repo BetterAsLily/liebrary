@@ -15,6 +15,10 @@ run/main_scene="res://src/levels/Starting Room.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+cookbook="*res://cookbook.gd"
+
 [display]
 
 window/size/viewport_width=640

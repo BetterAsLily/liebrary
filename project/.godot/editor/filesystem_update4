@@ -1,2 +1,5 @@
+res://src/combat/combat_instance_1.tscn
+res://src/combat/combat_instance_1.gd
 res://src/levels/Starting Room.tscn
 res://src/characters/beast.tscn
+res://cookbook.gd
