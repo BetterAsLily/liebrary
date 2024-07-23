@@ -1,9 +1,6 @@
-res://src/ui/dialogue_box.tscn
 res://src/characters/Player.tscn
 res://src/levels/Starting Room.tscn
 res://src/interaction/InteractionManager.tscn
 res://src/interaction/interaction_area.tscn
 res://src/objects/Stool.tscn
-res://src/ui/dialogue_box.gd
-res://src/ui/dialogue_manager.gd
-res://src/objects/stool.gd
+res://src/ui/dialogue_box.tscn
