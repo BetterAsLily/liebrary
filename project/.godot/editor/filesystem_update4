@@ -1,4 +1,5 @@
 res://src/characters/Player.tscn
+res://src/characters/beast.gd
 res://src/levels/Starting Room.tscn
 res://src/interaction/InteractionManager.tscn
 res://src/interaction/interaction_area.tscn
