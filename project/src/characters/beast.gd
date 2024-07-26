@@ -1,8 +1,8 @@
 extends CharacterABC
 
 const MAX_SPEED = 150.00
-const FRICTION = 500.00
-const DIR_4 = ["Left","Up","Right","Down"]
+const FRICTION = 20
+const DIR_4 = ["left","up","right","down"]
 
 @onready var animation = $AnimationPlayer
 
@@ -11,36 +11,50 @@ var initial_position = Vector2.ZERO
 var input_vector = Vector2.ZERO
 var is_moving = false
 var percent_moved_to_tile = 0
-
+var direction_history = [""]
+var direction = ""
 func _physics_process(delta):
-
-	var input_vector = Vector2.ZERO
-	last_anim_timestamp = animation.current_animation_position
-	if Input.is_action_pressed("ui_up") || Input.is_action_pressed("ui_down"):
-		if Input.is_action_pressed("ui_up"):
-			animation.play("Run_Up")
-		else:
-			animation.play("Run_Down")
-		animation.seek(last_anim_timestamp)
-		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-		input_vector.x = 0
-	elif Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right"):
-		if Input.is_action_pressed("ui_left"):
-			animation.play("Run_Left")
-		else:
-			animation.play("Run_Right")
-		animation.seek(last_anim_timestamp)
-		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		input_vector.y - 0
+	print(direction_history)
+	for direction in DIR_4:
+		if Input.is_action_just_released("ui_"+ direction):
+			var index = direction_history.find(direction)
+			if index != -1:
+				direction_history.remove_at(index)
+		if Input.is_action_just_pressed("ui_"+ direction):
+			direction_history.append(direction)
+	if direction_history.size():
+			direction = direction_history[direction_history.size()-1]
 	else:
-		animation.play("Idle_Down")
-	input_vector = input_vector.normalized()
-	
+		direction = "idle"
 	if DialogueManager.is_dialog_active != true:
+		var input_vector = Vector2.ZERO
+		last_anim_timestamp = animation.current_animation_position
+		if direction == "up" || direction == "down":
+			if direction == "up":
+				animation.play("Run_Up")
+				input_vector.y = 0 - Input.get_action_strength("ui_up")
+			else:
+				animation.play("Run_Down")
+				input_vector.y = Input.get_action_strength("ui_down")
+			animation.seek(last_anim_timestamp)
+			input_vector.x = 0
+		elif direction == "left" || direction == "right":
+			if direction == "left":
+				animation.play("Run_Left")
+				input_vector.x = 0 - Input.get_action_strength("ui_left")
+			else:
+				animation.play("Run_Right")
+				input_vector.x = Input.get_action_strength("ui_right")
+			animation.seek(last_anim_timestamp)
+			input_vector.y - 0
+		else:
+			animation.play("Idle_Down")
+		input_vector = input_vector.normalized()
 		if input_vector != Vector2.ZERO:
 			velocity = input_vector * MAX_SPEED
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
+			direction_history = []
 	else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			animation.pause()
