@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxdg0ua0rrfv5"]
+
+[ext_resource type="TileSet" uid="uid://b4ymmlr0v457g" path="res://assets/Floored/tileset_Floored.tres" id="1_36dwp"]
+[ext_resource type="Script" path="res://src/levels/hut.gd" id="1_nspvs"]
+[ext_resource type="PackedScene" uid="uid://cs2ivepcrdtcw" path="res://src/objects/Stool.tscn" id="3_4pahf"]
+[ext_resource type="Script" path="res://src/interaction/scene_trigger.gd" id="3_ior7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qm3c"]
+
+[node name="Hut" type="Node2D"]
+script = ExtResource("1_nspvs")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_36dwp")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 65536, 1, 131075, 327680, 1, 65539, 65536, 1, 65538, 65536, 1, 2, 327680, 2, 65537, 0, 1, 1, 0, 1, 131071, 131072, 1, 131073, 393216, 2, 3, 65536, 0, 131072, 65536, 0, 196607, 327680, 2, 131070, 65536, 1, 65535, 131072, 1, 131069, 0, 1, 65533, 0, 0, -2, 0, 0, -1, 131072, 0, -65535, 0, 0, -65534, 131072, 0, 196608, 393216, 1, 262143, 65536, 2, 262142, 0, 2, 196606, 393216, 1, 196605, 0, 2, 65534, 393216, 2, 196609, 327680, 1, 196610, 65536, 2, 196611, 131072, 2, 262144, 0, 1, 327680, 0, 1, 393216, 0, 2, 393217, 131072, 2, 327681, 131072, 1, 262145, 131072, 1, 131076, 65536, 2, 131077, 131072, 2, 65541, 327680, 1, 65542, 131072, 2, 6, 327680, 1, -65531, 65536, 0, 5, 65536, 1, 7, 65536, 2, -65529, 65536, 1, -131064, 65536, 1, -131063, 327680, 1, -131062, 131072, 2, -65527, 131072, 2, -65528, 327680, 1, -65530, 393216, 2, -131066, 0, 0, -196601, 0, 0, -196600, 65536, 0, -196599, 65536, 0, 8, 131072, 2, -131065, 393216, 2, -196598, 131072, 0, 65540, 65536, 1, 4, 393216, 2, -65532, 0, 0)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="Zone 1" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(32, 184)
+
+[node name="SceneTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_ior7q")
+connected_scene = "Zone 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(32, 224)
+shape = SubResource("RectangleShape2D_0qm3c")
+
+[node name="Stool" parent="." instance=ExtResource("3_4pahf")]
+position = Vector2(112, 48)
+
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

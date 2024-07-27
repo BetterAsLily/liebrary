@@ -1,7 +1,15 @@
+res://src/levels/Hut.tscn
+res://assets/Floored/tileset_Floored.tres
+res://base_scene.gd
+res://src/interaction/scene_manager.gd
+res://src/levels/Zone 1.tscn
 res://src/characters/Player.tscn
-res://src/characters/beast.gd
-res://src/levels/Starting Room.tscn
 res://src/interaction/InteractionManager.tscn
 res://src/interaction/interaction_area.tscn
 res://src/objects/Stool.tscn
 res://src/ui/dialogue_box.tscn
+res://src/interaction/scene_trigger.tscn
+res://cage.gd
+res://src/levels/cage.tscn
+res://src/levels/zone_1.gd
+res://src/interaction/scene_trigger.gd
