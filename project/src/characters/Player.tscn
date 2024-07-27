@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cxu2wus7xaa1q"]
 
-[ext_resource type="Script" path="res://src/characters/beast.gd" id="1_2331s"]
+[ext_resource type="Script" path="res://src/characters/player.gd" id="1_2331s"]
 [ext_resource type="Texture2D" uid="uid://c2que1gjqwbx2" path="res://assets/WitchDay.png" id="2_brfye"]
 
 [sub_resource type="Shader" id="Shader_p6ea0"]
