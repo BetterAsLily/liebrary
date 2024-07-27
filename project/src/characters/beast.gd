@@ -1,4 +1,5 @@
 extends CharacterABC
+class_name Player
 
 const MAX_SPEED = 150.00
 const FRICTION = 20
@@ -11,19 +12,17 @@ var initial_position = Vector2.ZERO
 var input_vector = Vector2.ZERO
 var is_moving = false
 var percent_moved_to_tile = 0
-var direction_history = [""]
 var direction = ""
 func _physics_process(delta):
-	print(direction_history)
 	for direction in DIR_4:
 		if Input.is_action_just_released("ui_"+ direction):
-			var index = direction_history.find(direction)
+			var index = MovementManager.direction_history.find(direction)
 			if index != -1:
-				direction_history.remove_at(index)
+				MovementManager.direction_history.remove_at(index)
 		if Input.is_action_just_pressed("ui_"+ direction):
-			direction_history.append(direction)
-	if direction_history.size():
-			direction = direction_history[direction_history.size()-1]
+			MovementManager.direction_history.append(direction)
+	if MovementManager.direction_history.size():
+			direction = MovementManager.direction_history[MovementManager.direction_history.size()-1]
 	else:
 		direction = "idle"
 	if DialogueManager.is_dialog_active != true:
@@ -47,14 +46,14 @@ func _physics_process(delta):
 				input_vector.x = Input.get_action_strength("ui_right")
 			animation.seek(last_anim_timestamp)
 			input_vector.y - 0
-		else:
+		elif direction == "idle":
 			animation.play("Idle_Down")
 		input_vector = input_vector.normalized()
 		if input_vector != Vector2.ZERO:
 			velocity = input_vector * MAX_SPEED
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
-			direction_history = []
+			MovementManager.direction_history = []
 	else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			animation.pause()

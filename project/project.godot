@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="liebrary"
-run/main_scene="res://src/levels/Starting Room.tscn"
+run/main_scene="res://src/levels/Zone 1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -19,15 +19,17 @@ config/icon="res://assets/icon.svg"
 
 InteractionManager="*res://src/interaction/InteractionManager.tscn"
 DialogueManager="*res://src/ui/dialogue_manager.gd"
+MovementManager="*res://src/interaction/MovementManager.gd"
+SceneManager="*res://src/interaction/scene_manager.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=4
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/layer_4="Triggers"
 
 [global_group]
 
@@ -83,6 +85,7 @@ advance_dialog={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Dialogue"
+2d_physics/layer_4="Triggers"
 
 [rendering]
 
