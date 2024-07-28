@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://u4ukjvg42khj"]
+[gd_scene load_steps=3 format=3 uid="uid://u4ukjvg42khj"]
 
 [ext_resource type="Script" path="res://src/ui/menu.gd" id="1_7wknh"]
+[ext_resource type="FontFile" uid="uid://qbaf0al307bs" path="res://assets/PixelFont.ttf" id="2_n3j2j"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -25,6 +26,7 @@ offset_bottom = 36.0
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n3j2j")
 text = "Start"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

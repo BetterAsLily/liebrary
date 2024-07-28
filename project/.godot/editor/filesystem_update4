@@ -9,7 +9,5 @@ res://src/ui/dialogue_box.tscn
 res://src/interaction/scene_trigger.tscn
 res://src/levels/cage.tscn
 res://src/ui/menu.tscn
-res://src/Singleton/global_variables.gd
-res://src/ui/menu.gd
-res://base_scene.gd
 res://cage.gd
+res://src/levels/zone_1.gd
