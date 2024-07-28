@@ -9,7 +9,7 @@ res://src/ui/dialogue_box.tscn
 res://src/interaction/scene_trigger.tscn
 res://src/levels/cage.tscn
 res://src/ui/menu.tscn
+res://src/Singleton/global_variables.gd
 res://src/ui/menu.gd
-res://src/levels/follow_cam.gd
-res://src/levels/zone_1.gd
-res://src/characters/player.gd
+res://base_scene.gd
+res://cage.gd

@@ -1,3 +1,6 @@
+ColorRect
+TextureRect
+CanvasLayer
 Camera2D
 Button
 VBoxContainer
@@ -9,6 +12,3 @@ Node2D
 TileMapLayer
 BaseScene
 Player
-Area2D
-TileMap
-AnimationTree
