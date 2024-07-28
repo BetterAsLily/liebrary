@@ -21,6 +21,7 @@ InteractionManager="*res://src/interaction/InteractionManager.tscn"
 DialogueManager="*res://src/ui/dialogue_manager.gd"
 MovementManager="*res://src/interaction/MovementManager.gd"
 SceneManager="*res://src/interaction/scene_manager.gd"
+Cookbook="*res://cookbook.gd"
 
 [display]
 
