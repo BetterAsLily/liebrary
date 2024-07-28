@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7coyy18vx4mu"]
+[gd_scene load_steps=7 format=3 uid="uid://c7coyy18vx4mu"]
 
 [ext_resource type="Texture2D" uid="uid://bx5camm01cmkj" path="res://assets/placeholder.png" id="1_1pymf"]
 [ext_resource type="Script" path="res://src/levels/combat_1.gd" id="1_kqkrx"]
 [ext_resource type="Texture2D" uid="uid://csr0adbhaaqxj" path="res://assets/witch_idle_sprite_still.png" id="2_dommk"]
 [ext_resource type="Texture2D" uid="uid://dhsybj55n8rwj" path="res://assets/placeholder_enemy_2.png" id="3_jl2x1"]
+[ext_resource type="Texture2D" uid="uid://cw4kdwon5lhuv" path="res://assets/myscroll.png" id="5_0w7ga"]
+[ext_resource type="FontFile" uid="uid://qbaf0al307bs" path="res://assets/PixelFont.ttf" id="6_4otp3"]
 
 [node name="Combat1" type="Node2D"]
 script = ExtResource("1_kqkrx")
@@ -25,3 +27,32 @@ texture = ExtResource("2_dommk")
 position = Vector2(448, 216)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_jl2x1")
+
+[node name="Myscroll" type="Sprite2D" parent="."]
+position = Vector2(96, 88)
+scale = Vector2(3.5625, 3)
+texture = ExtResource("5_0w7ga")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 170.0
+offset_bottom = 92.0
+scale = Vector2(1.04176, 1.37712)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4otp3")
+text = "Potions
+Health: ↑↓↓←→
+Dmg: ←←↑←↓→"
+
+[node name="History" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 120.0
+offset_right = 168.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4otp3")
+theme_override_font_sizes/font_size = 18
+clip_text = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

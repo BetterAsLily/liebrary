@@ -1,4 +1,5 @@
 AudioStreamPlayer
+Label
 AudioStreamPlayer2D
 StaticBody2D
 CollisionPolygon2D
@@ -11,5 +12,3 @@ TextureRect
 Camera2D
 Button
 VBoxContainer
-Sprite2D
-SceneTrigger
