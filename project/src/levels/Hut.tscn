@@ -18,7 +18,7 @@ layer_0/tile_data = PackedInt32Array(131074, 65536, 1, 131075, 327680, 1, 65539,
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="Zone 1" type="Marker2D" parent="EntranceMarkers"]
-position = Vector2(32, 184)
+position = Vector2(288, -64)
 
 [node name="SceneTrigger" type="Area2D" parent="."]
 collision_layer = 0
@@ -27,10 +27,13 @@ script = ExtResource("3_ior7q")
 connected_scene = "Zone 1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(32, 224)
+position = Vector2(320, -64)
 shape = SubResource("RectangleShape2D_0qm3c")
 
 [node name="Stool" parent="." instance=ExtResource("3_4pahf")]
 position = Vector2(112, 48)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(104, 56)
 
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

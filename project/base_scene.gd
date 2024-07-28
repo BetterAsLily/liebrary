@@ -12,7 +12,6 @@ func _ready() -> void:
 	self.add_child(player)
 	
 	position_player()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func position_player():

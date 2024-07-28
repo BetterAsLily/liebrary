@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="liebrary"
-run/main_scene="res://src/levels/Zone 1.tscn"
+run/main_scene="res://src/levels/cage.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -21,7 +21,7 @@ InteractionManager="*res://src/interaction/InteractionManager.tscn"
 DialogueManager="*res://src/ui/dialogue_manager.gd"
 MovementManager="*res://src/interaction/MovementManager.gd"
 SceneManager="*res://src/interaction/scene_manager.gd"
-Cookbook="*res://cookbook.gd"
+GlobalVariables="*res://src/Singleton/global_variables.gd"
 
 [display]
 

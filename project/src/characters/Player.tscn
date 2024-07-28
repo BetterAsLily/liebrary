@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cxu2wus7xaa1q"]
 
-[ext_resource type="Script" path="res://src/characters/beast.gd" id="1_2331s"]
+[ext_resource type="Script" path="res://src/characters/player.gd" id="1_2331s"]
 [ext_resource type="Texture2D" uid="uid://c2que1gjqwbx2" path="res://assets/WitchDay.png" id="2_brfye"]
 
 [sub_resource type="Shader" id="Shader_p6ea0"]
@@ -39,6 +39,21 @@ shader = SubResource("Shader_p6ea0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgds"]
 
+[sub_resource type="Animation" id="Animation_23unx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_phity"]
 resource_name = "Idle_Down"
 length = 2.0
@@ -55,21 +70,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_23unx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_h8d14"]
@@ -142,15 +142,16 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ww5n"]
 _data = {
-"Idle_Down": SubResource("Animation_phity"),
 "RESET": SubResource("Animation_23unx"),
-"Run_Down": SubResource("Animation_h8d14"),
-"Run_Left": SubResource("Animation_kmnjl"),
-"Run_Right": SubResource("Animation_2kgek"),
-"Run_Up": SubResource("Animation_dssgl")
+"idle_down": SubResource("Animation_phity"),
+"run_down": SubResource("Animation_h8d14"),
+"run_left": SubResource("Animation_kmnjl"),
+"run_right": SubResource("Animation_2kgek"),
+"run_up": SubResource("Animation_dssgl")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+process_mode = 3
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_syj2t")
 collision_layer = 2
