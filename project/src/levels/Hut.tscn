@@ -33,4 +33,7 @@ shape = SubResource("RectangleShape2D_0qm3c")
 [node name="Stool" parent="." instance=ExtResource("3_4pahf")]
 position = Vector2(112, 48)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(104, 56)
+
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

@@ -25,35 +25,38 @@ func _physics_process(delta):
 			direction = MovementManager.direction_history[MovementManager.direction_history.size()-1]
 	else:
 		direction = "idle"
-	if DialogueManager.is_dialog_active != true:
+	
+	if DialogueManager.is_dialog_active != true && GlobalVariables.game_state == "running":
 		var input_vector = Vector2.ZERO
 		last_anim_timestamp = animation.current_animation_position
 		if direction == "up" || direction == "down":
 			if direction == "up":
-				animation.play("Run_Up")
+				animation.play("run_up")
 				input_vector.y = 0 - Input.get_action_strength("ui_up")
 			else:
-				animation.play("Run_Down")
+				animation.play("run_down")
 				input_vector.y = Input.get_action_strength("ui_down")
 			animation.seek(last_anim_timestamp)
 			input_vector.x = 0
 		elif direction == "left" || direction == "right":
 			if direction == "left":
-				animation.play("Run_Left")
+				animation.play("run_left")
 				input_vector.x = 0 - Input.get_action_strength("ui_left")
 			else:
-				animation.play("Run_Right")
+				animation.play("run_right")
 				input_vector.x = Input.get_action_strength("ui_right")
 			animation.seek(last_anim_timestamp)
 			input_vector.y - 0
 		elif direction == "idle":
-			animation.play("Idle_Down")
+			animation.play("idle_down")
 		input_vector = input_vector.normalized()
 		if input_vector != Vector2.ZERO:
 			velocity = input_vector * MAX_SPEED
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			MovementManager.direction_history = []
+	elif GlobalVariables.game_state == "paused":
+			animation.play("idle_down")
 	else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			animation.pause()
