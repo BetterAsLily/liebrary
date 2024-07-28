@@ -22,6 +22,7 @@ DialogueManager="*res://src/ui/dialogue_manager.gd"
 MovementManager="*res://src/interaction/MovementManager.gd"
 SceneManager="*res://src/interaction/scene_manager.gd"
 GlobalVariables="*res://src/Singleton/global_variables.gd"
+Cookbook="*res://src/cookbook.gd"
 
 [display]
 

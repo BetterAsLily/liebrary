@@ -1,5 +1,8 @@
-res://src/levels/Zone 1.tscn
+res://src/levels/combat1.tscn
 res://assets/Floored/tileset_Floored.tres
+res://src/levels/combat_1.gd
+res://src/cookbook.gd
+res://src/levels/Zone 1.tscn
 res://src/levels/Hut.tscn
 res://src/characters/Player.tscn
 res://src/interaction/InteractionManager.tscn
@@ -8,6 +11,4 @@ res://src/objects/Stool.tscn
 res://src/ui/dialogue_box.tscn
 res://src/interaction/scene_trigger.tscn
 res://src/levels/cage.tscn
-res://src/ui/menu.tscn
-res://cage.gd
-res://src/levels/zone_1.gd
+res://src/levels/scene.tscn
